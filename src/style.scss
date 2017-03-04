@@ -1,9 +1,14 @@
 $bluegrey: #2B3A42;
 
+body {
+  font-family: sans-serif;
+  font-size: 1em;
+}
+
 pre {
   padding: 20px;
   background: $bluegrey url('code.png') no-repeat center center / 32px 32px;
   color: #dedede;
   text-shadow: 0 1px 1px rgba(#000, .5);
-  font-size: 22em;
+  font-size: 2em;
 }
