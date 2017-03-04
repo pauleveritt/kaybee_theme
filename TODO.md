@@ -4,6 +4,8 @@
 
 - Vendor splitting
 
+- Source maps
+
 - Font loader
 
 - Tree shaking

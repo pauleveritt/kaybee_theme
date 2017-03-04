@@ -1,11 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const extractCommons = new webpack.optimize.CommonsChunkPlugin({
-  name: 'commons',
-  filename: 'commons.js'
-})
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const extractCSS = new ExtractTextPlugin('[name].bundle.css')
 
@@ -18,7 +13,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [{
@@ -42,7 +37,13 @@ const config = {
     }]
   },
   plugins: [
-    extractCommons,
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest'],
+      minChunks: function (module) {
+        // this assumes your vendor imports exist in the node_modules directory
+        return module.context && module.context.indexOf('node_modules') !== -1
+      }
+    }),
     extractCSS
   ]
 }
