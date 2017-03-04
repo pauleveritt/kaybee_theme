@@ -6,4 +6,4 @@
 
 - Font loader
 
-
+- Tree shaking

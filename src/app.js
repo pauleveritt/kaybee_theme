@@ -1,7 +1,3 @@
-if (module.hot) {
-  module.hot.accept()
-}
-
 require('./style.scss')
 
 import { groupBy } from 'lodash/collection'

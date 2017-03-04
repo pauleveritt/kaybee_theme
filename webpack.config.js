@@ -42,7 +42,6 @@ const config = {
     }]
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
     extractCommons,
     extractCSS
   ]
