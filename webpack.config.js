@@ -50,7 +50,13 @@ const config = {
         return module.context && module.context.indexOf('node_modules') !== -1
       }
     }),
-    extractCSS
+    extractCSS,
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'Tether': 'tether'
+    })
   ]
 }
 
