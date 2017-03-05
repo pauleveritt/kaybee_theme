@@ -7,13 +7,15 @@ const extractCSS = new ExtractTextPlugin('[name].bundle.css')
 const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: './app.js',
-    admin: './admin.js'
+    app: './app.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
     filename: '[name].bundle.js',
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, './src'),
   },
   module: {
     rules: [
