@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Starter Template for Bootstrap</title>
+    <title>kaybee_theme</title>
     <link rel="stylesheet" href="../dist/app.bundle.css">
 </head>
 <body>
@@ -15,7 +15,13 @@
             aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a id="kbt-logo"
+       class="navbar-brand" href="#">
+        <img src="headshot-closeup.jpg" alt="Headshot"
+             class="rounded-circle" height="80" width="99">
+    </a>
+    <a id="kbt-sitename"
+       class="navbar-brand" href="#">Paul Everitt</a>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
@@ -39,8 +45,10 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search">
+                <div class="input-group-addon">@</div>
+            </div>
         </form>
     </div>
 </nav>
@@ -52,7 +60,8 @@
         <p class="lead">
             Use this document as a way to quickly start any new project.<br>
             All you get is this text and a
-            mostly barebones HTML document.</p>
+            mostly barebones HTML document. With more stuff on more
+            lines to see how the wrapping would look. </p>
     </div>
 
 </div><!-- /.container -->
