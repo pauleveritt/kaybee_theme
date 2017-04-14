@@ -4,6 +4,12 @@
 
 - Make it a Sphinx theme
 
+- Document the development setup
+
+    - Running app.py
+    
+    - npm start
+
 # Next
 
 - Release a package
