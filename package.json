@@ -1,7 +1,7 @@
 {
   "name": "kaybee_theme",
   "version": "1.0.0",
-  "description": "Sphinx tehem for the kaybee project",
+  "description": "Sphinx theme for the kaybee project",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --inline",

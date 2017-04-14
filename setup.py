@@ -6,7 +6,7 @@ from setuptools import setup
 version = '0.0.1'
 
 # README into long description
-with codecs.open('README.rst', encoding='utf-8') as f:
+with codecs.open('README.md', encoding='utf-8') as f:
     readme = f.read()
 
 setup(

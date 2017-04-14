@@ -19,25 +19,28 @@ from livereload import Server
 
 app = Flask(
     __name__,
-    static_url_path='/dist',
-    static_folder='dist',
-    template_folder='src/templates'
+    static_url_path='/static',
+    static_folder='./static',
+    template_folder='./templates'
 )
 app.debug = True
 
 
+def pathto(fn, flag):
+    """ Simulate sphinx's pathto function """
+    newfn = fn[1:]  # _static -> static
+    print('newfn', newfn)
+    return newfn
+
+
 @app.route("/")
-def hello():
-    return render_template('layout.jinja2', name='Hello')
+def index():
+    return render_template(
+        'layout.jinja2',
+        pathto=pathto
+    )
 
 
 if __name__ == "__main__":
     server = Server(app.wsgi_app)
     server.serve()
-
-# app is a Flask object
-# app = create_app()
-
-# remember to use DEBUG mode for templates auto reload
-# https://github.com/lepture/python-livereload/issues/144
-# app.debug = True

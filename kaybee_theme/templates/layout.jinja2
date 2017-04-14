@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>kaybee_theme</title>
-    <link rel="stylesheet" href="../dist/app.bundle.css">
+    <link rel="stylesheet" href="{{ pathto('_static/basic.bundle.css', 1) }}">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     </button>
     <a id="kbt-logo"
        class="navbar-brand" href="#">
-        <img src="headshot-closeup.jpg" alt="Headshot"
+        <img src="{{ pathto('_static/headshot-closeup.jpg', 1) }}" alt="Headshot"
              class="rounded-circle" height="80" width="99">
     </a>
     <a id="kbt-sitename"
@@ -65,7 +65,7 @@
     </div>
 
 </div><!-- /.container -->
-<script src="../dist/manifest.bundle.js"></script>
-<script src="../dist/app.bundle.js"></script>
+<script src="{{ pathto('_static/manifest.bundle.js', 1) }}"></script>
+<script src="{{ pathto('_static/basic.bundle.js', 1) }}"></script>
 </body>
 </html>

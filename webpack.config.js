@@ -5,23 +5,23 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const extractCSS = new ExtractTextPlugin('[name].bundle.css')
 
 const config = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'kaybee_theme'),
   entry: {
-    app: './app.js'
+    basic: './app.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
-    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'kaybee_theme/static'),
+    publicPath: '/static/',
+    filename: '[name].bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './src'),
+    // contentBase: path.resolve(__dirname, './src')
   },
   module: {
     rules: [
       {
         test: /\.(png|jpg)$/,
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, 'kaybee_theme'),
         use: [
           {
             loader: 'url-loader',
@@ -30,12 +30,12 @@ const config = {
       },
       {
         test: /\.scss$/,
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, 'kaybee_theme'),
         loader: extractCSS.extract(['css-loader', 'sass-loader'])
       },
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, 'kaybee_theme'),
         use: [{
           loader: 'babel-loader',
           options: {presets: ['es2015']}
