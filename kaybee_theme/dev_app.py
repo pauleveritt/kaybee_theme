@@ -17,6 +17,8 @@ It provides:
 from flask import Flask, render_template
 from livereload import Server
 
+from kaybee_theme.sphinx_api import Page
+
 app = Flask(
     __name__,
     static_url_path='/static',
@@ -37,7 +39,8 @@ def pathto(fn, flag):
 def index():
     return render_template(
         'layout.jinja2',
-        pathto=pathto
+        pathto=pathto,
+        page=Page()
     )
 
 
