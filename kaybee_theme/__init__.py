@@ -25,7 +25,7 @@ def get_html_templates_path():
 
 def update_context(app, pagename, templatename, context, doctree):
     context['theme_version'] = version.__version__
-    context['page'] = Page()
+    context['page'] = Page(body=context.get('body'))
     context['site'] = Site()
     context['sphinx'] = Sphinx(is_flask=False)
 

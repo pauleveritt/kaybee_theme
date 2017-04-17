@@ -16,8 +16,9 @@ class Page:
     title = 'Some Page'
     titlesuffix = 'Some Suffix'
 
-    def __init__(self):
-        pass
+    def __init__(self, body: str):
+        self.body = body
+
 
 
 class Site:

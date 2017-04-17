@@ -16,6 +16,7 @@ It provides:
 """
 from flask import Flask, render_template
 from livereload import Server
+from markupsafe import Markup
 
 from kaybee_theme.fake_kaybee_api import Page, Site, Sphinx
 
@@ -31,8 +32,8 @@ app.debug = True
 @app.route("/")
 def index():
     return render_template(
-        'layout.html',
-        page=Page(),
+        'page.html',
+        page=Page(body=Markup('<p>This is the body</p>')),
         site=Site(),
         sphinx=Sphinx()
     )
