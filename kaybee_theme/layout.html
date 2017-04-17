@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ page.title|striptags|e }} - {{ page.titlesuffix }}</title>
+    <title>{{ page.title|striptags|e }} - {{ page.titlesuffix|e }}</title>
     <link rel="stylesheet" href="{{ pathto('_static/basic.bundle.css', 1) }}">
 </head>
 <body>
@@ -62,12 +62,10 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
+        <h1>{{ page.title }}</h1>
         <p class="lead">
-            Use this document as a way to quickly start any new project.<br>
-            All you get is this text and a
-            mostly barebones HTML document. With more stuff on more
-            lines to see how the wrapping would look. </p>
+            {{ body }}
+        </p>
     </div>
 
 </div><!-- /.container -->

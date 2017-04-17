@@ -38,7 +38,7 @@ def pathto(fn, flag):
 @app.route("/")
 def index():
     return render_template(
-        'layout.jinja2',
+        'layout.html',
         pathto=pathto,
         page=Page()
     )

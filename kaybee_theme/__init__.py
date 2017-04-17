@@ -1,5 +1,7 @@
 import os
 
+from kaybee_theme.sphinx_api import Page
+
 
 def get_path():
     """
@@ -11,6 +13,7 @@ def get_path():
 
 def update_context(app, pagename, templatename, context, doctree):
     context['theme_version'] = 0.1
+    context['page'] = Page()
 
 
 def setup(app):
