@@ -43,7 +43,10 @@ def register_site_sphinx():
 def index():
     return render_template(
         'page.html',
-        page=Page(body=Markup('<p>This is the body</p>'))
+        page=Page(
+            section='Home',
+            body=Markup('<p>This is the body</p>')
+        )
     )
 
 
