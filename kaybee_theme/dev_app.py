@@ -29,13 +29,21 @@ app = Flask(
 app.debug = True
 
 
+@app.context_processor
+def register_site_sphinx():
+    site = Site()
+    sphinx = Sphinx()
+    return dict(
+        sphinx=sphinx,
+        site=site
+    )
+
+
 @app.route("/")
 def index():
     return render_template(
         'page.html',
-        page=Page(body=Markup('<p>This is the body</p>')),
-        site=Site(),
-        sphinx=Sphinx()
+        page=Page(body=Markup('<p>This is the body</p>'))
     )
 
 
