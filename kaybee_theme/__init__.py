@@ -11,6 +11,17 @@ def get_path():
     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 
+def get_html_templates_path():
+    """Return path to theme's template folder.
+
+    Used by the doc project's config.py to hook into the template 
+    setup.
+    """
+
+    pkgdir = os.path.abspath(os.path.dirname(__file__))
+    return [os.path.join(pkgdir, 'templates')]
+
+
 def update_context(app, pagename, templatename, context, doctree):
     context['theme_version'] = 0.1
     context['page'] = Page()

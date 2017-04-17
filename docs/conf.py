@@ -21,6 +21,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import kaybee_theme
 
 # -- General configuration ------------------------------------------------
 
@@ -34,7 +35,7 @@
 extensions = ['sphinx.ext.intersphinx', 'kaybee_theme']
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['_templates'] + kaybee_theme.get_html_templates_path()
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -77,7 +78,6 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
-
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -96,12 +96,10 @@ html_theme = 'kaybee_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'kaybee_themedoc'
-
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -131,7 +129,6 @@ latex_documents = [
      'Paul Everitt', 'manual'),
 ]
 
-
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
@@ -140,7 +137,6 @@ man_pages = [
     (master_doc, 'kaybee_theme', 'kaybee_theme Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output -------------------------------------------
 
@@ -152,9 +148,6 @@ texinfo_documents = [
      author, 'kaybee_theme', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
