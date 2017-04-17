@@ -17,7 +17,7 @@ It provides:
 from flask import Flask, render_template
 from livereload import Server
 
-from kaybee_theme.sphinx_api import Page
+from kaybee_theme.fake_kaybee_api import Page, Site, Sphinx
 
 app = Flask(
     __name__,
@@ -28,19 +28,13 @@ app = Flask(
 app.debug = True
 
 
-def pathto(fn, flag):
-    """ Simulate sphinx's pathto function """
-    newfn = fn[1:]  # _static -> static
-    print('newfn', newfn)
-    return newfn
-
-
 @app.route("/")
 def index():
     return render_template(
-        'templates/layout.html',
-        pathto=pathto,
-        page=Page()
+        'layout.html',
+        page=Page(),
+        site=Site(),
+        sphinx=Sphinx()
     )
 
 

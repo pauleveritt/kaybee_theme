@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ page.title|striptags|e }} - {{ page.titlesuffix|e }}</title>
-    <link rel="stylesheet" href="{{ pathto('_static/basic.bundle.css', 1) }}">
+    <link rel="stylesheet" href="{{ sphinx.pathto('_static/basic.bundle.css', 1) }}">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
     </button>
     <a id="kbt-logo"
        class="navbar-brand" href="#">
-        <img src="{{ pathto('_static/headshot-closeup.jpg', 1) }}"
+        <img src="{{ sphinx.pathto('_static/headshot-closeup.jpg', 1) }}"
              alt="Headshot"
              class="rounded-circle" height="80" width="99">
     </a>
@@ -62,14 +62,14 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>xxxx{{ page.title }}</h1>
+        <h1>{{ page.title }}</h1>
         <p class="lead">
             {{ body }}
         </p>
     </div>
 
 </div><!-- /.container -->
-<script src="{{ pathto('_static/manifest.bundle.js', 1) }}"></script>
-<script src="{{ pathto('_static/basic.bundle.js', 1) }}"></script>
+<script src="{{ sphinx.pathto('_static/manifest.bundle.js', 1) }}"></script>
+<script src="{{ sphinx.pathto('_static/basic.bundle.js', 1) }}"></script>
 </body>
 </html>

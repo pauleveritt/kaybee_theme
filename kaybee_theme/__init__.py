@@ -1,6 +1,6 @@
 import os
 
-from kaybee_theme.sphinx_api import Page
+from kaybee_theme.fake_kaybee_api import Page, Site, Sphinx
 from kaybee_theme import _version as version
 
 
@@ -26,6 +26,8 @@ def get_html_templates_path():
 def update_context(app, pagename, templatename, context, doctree):
     context['theme_version'] = version.__version__
     context['page'] = Page()
+    context['site'] = Site()
+    context['sphinx'] = Sphinx(is_flask=False)
 
 
 def setup(app):
