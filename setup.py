@@ -3,7 +3,11 @@
 import codecs
 from setuptools import setup
 
-version = '0.0.1'
+# Version info -- read without importing
+_locals = {}
+with open('kaybee_theme/_version.py') as fp:
+    exec(fp.read(), None, _locals)
+version = _locals['__version__']
 
 # README into long description
 with codecs.open('README.md', encoding='utf-8') as f:

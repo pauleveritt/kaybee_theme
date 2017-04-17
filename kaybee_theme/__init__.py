@@ -1,6 +1,7 @@
 import os
 
 from kaybee_theme.sphinx_api import Page
+from kaybee_theme import _version as version
 
 
 def get_path():
@@ -23,11 +24,11 @@ def get_html_templates_path():
 
 
 def update_context(app, pagename, templatename, context, doctree):
-    context['theme_version'] = 0.1
+    context['theme_version'] = version.__version__
     context['page'] = Page()
 
 
 def setup(app):
     app.connect('html-page-context', update_context)
-    return {'version': 0.1,
+    return {'version': version.__version__,
             'parallel_read_safe': True}
