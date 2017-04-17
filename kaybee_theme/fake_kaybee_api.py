@@ -31,14 +31,14 @@ class Site:
 class Sphinx:
     """ Utilities etc. from sphinx """
 
-    def __init__(self, is_flask: bool = True):
-        self.is_flask = is_flask
+    def __init__(self, is_sphinx: bool = False):
+        self.is_sphinx = is_sphinx
 
     def pathto(self, fn, flag):
         """ Simulate sphinx's pathto function """
 
-        if self.is_flask:
-            newfn = fn[1:]  # _static -> static
-        else:
+        if self.is_sphinx:
             newfn = fn  ##[1:]  # _static -> ståatic
+        else:
+            newfn = fn[1:]  # _static -> static
         return newfn
