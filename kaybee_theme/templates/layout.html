@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ page.title|striptags|e }} - {{ page.titlesuffix|e }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="{{ sphinx.pathto('_static/basic.bundle.css', 1) }}">
 </head>
 <body>
@@ -39,7 +40,9 @@
             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                 <input type="text" class="form-control"
                        id="inlineFormInputGroup" placeholder="Search">
-                <div class="input-group-addon">@</div>
+                <div class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </div>
             </div>
         </form>
     </div>
