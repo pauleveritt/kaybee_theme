@@ -14,12 +14,13 @@ It provides:
 - A livereload-capable server
 
 """
-import reg
-from flask import Flask, render_template
+from flask import Flask
 from livereload import Server
 from markupsafe import Markup
 
-from kaybee_theme.fake_kaybee_api import Page, Site, Sphinx
+from kaybee_theme.rms import CMS
+from kaybee_theme.page import Page
+Page # Prevent Optimize Imports from whacking this
 
 app = Flask(
     __name__,
@@ -30,30 +31,21 @@ app = Flask(
 app.debug = True
 
 
-@app.context_processor
-def register_site_sphinx():
-    site = Site()
-    sphinx = Sphinx()
-    return dict(
-        sphinx=sphinx,
-        site=site
-    )
-
-
 @app.route("/")
 def index():
-    return render_template(
-        'page.html',
-        page=Page(
-            section='Home',
-            body=Markup('<p>This is the body</p>')
-        )
+    cms = CMS('Some Sphinx docs site')
+    resource1 = dict(
+        title='Resource Page 1',
+        subtitle='RP1 is subtitled',
+        resource_type='Page',
+        section='Home'
     )
-
-
-@reg.dispatch('item')
-def size(item):
-    raise NotImplementedError
+    body = Markup('<p>This is the body</p>')
+    this_page = cms.render(
+        body,
+        resource1
+    )
+    return this_page()
 
 
 if __name__ == "__main__":

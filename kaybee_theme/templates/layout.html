@@ -6,7 +6,7 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ page.title|striptags|e }} - {{ page.titlesuffix|e }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="{{ sphinx.pathto('_static/basic.bundle.css', 1) }}">
+    <link rel="stylesheet" href="{{ site.pathto('_static/basic.bundle.css', 1) }}">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
     </button>
     <a id="kbt-logo"
        class="navbar-brand" href="#">
-        <img src="{{ sphinx.pathto('_static/headshot-closeup.jpg', 1) }}"
+        <img src="{{ site.pathto('_static/headshot-closeup.jpg', 1) }}"
              alt="Headshot"
              class="rounded-circle" height="80" width="99">
     </a>
@@ -58,7 +58,7 @@
     </div>
 
 </div><!-- /.container -->
-<script src="{{ sphinx.pathto('_static/manifest.bundle.js', 1) }}"></script>
-<script src="{{ sphinx.pathto('_static/basic.bundle.js', 1) }}"></script>
+<script src="{{ site.pathto('_static/manifest.bundle.js', 1) }}"></script>
+<script src="{{ site.pathto('_static/basic.bundle.js', 1) }}"></script>
 </body>
 </html>
