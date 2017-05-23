@@ -31,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav mr-auto">
             {% for nav in site.nav_menu %}
-            <li class="nav-item {{ 'active' if page.section == nav.title else '' }}">
+            <li class="nav-item {{ page.active(nav.title) }}">
                 <a class="nav-link" href="{{ nav.url }}">{{ nav.title }}</a>
             </li>
             {% endfor %}

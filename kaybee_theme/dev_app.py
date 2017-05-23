@@ -14,6 +14,7 @@ It provides:
 - A livereload-capable server
 
 """
+import reg
 from flask import Flask, render_template
 from livereload import Server
 from markupsafe import Markup
@@ -48,6 +49,11 @@ def index():
             body=Markup('<p>This is the body</p>')
         )
     )
+
+
+@reg.dispatch('item')
+def size(item):
+    raise NotImplementedError
 
 
 if __name__ == "__main__":
