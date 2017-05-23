@@ -20,7 +20,9 @@ from markupsafe import Markup
 
 from kaybee_theme.rms import CMS
 from kaybee_theme.page import Page
-Page # Prevent Optimize Imports from whacking this
+from kaybee_theme.sample_data import sample_site
+
+Page  # Prevent Optimize Imports from whacking this
 
 app = Flask(
     __name__,
@@ -29,21 +31,27 @@ app = Flask(
     template_folder='./templates'
 )
 app.debug = True
+cms = CMS(sample_site['title'])
 
 
 @app.route("/")
 def index():
-    cms = CMS('Some Sphinx docs site')
-    resource1 = dict(
-        title='Resource Page 1',
-        subtitle='RP1 is subtitled',
-        resource_type='Page',
-        section='Home'
-    )
-    body = Markup('<p>This is the body</p>')
+    resource = sample_site['items'][0]['resource']
+    body = Markup(sample_site['items'][0]['body'])
     this_page = cms.render(
         body,
-        resource1
+        resource
+    )
+    return this_page()
+
+
+@app.route("/blog")
+def blog():
+    resource = sample_site['items'][1]['resource']
+    body = Markup(sample_site['items'][1]['body'])
+    this_page = cms.render(
+        body,
+        resource
     )
     return this_page()
 
