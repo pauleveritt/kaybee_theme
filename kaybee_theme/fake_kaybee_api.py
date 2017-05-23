@@ -17,18 +17,17 @@ class Page:
     titlesuffix = 'Some Suffix'
     active = ''
 
-    def __init__(self, section: str, body: str):
+    def __init__(self, body: str, section: str = ''):
         self.section = section
         self.body = body
-
 
 
 class Site:
     """ Global data and config """
 
     nav_menu = [
-        dict(title='Home', url='/'),
-        dict(title='Blog', url='/blog')
+        dict(title='Home', url=''),
+        dict(title='Blog', url='blog')
     ]
 
     def __init__(self):

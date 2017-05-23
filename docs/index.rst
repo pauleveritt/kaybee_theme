@@ -5,7 +5,7 @@ Welcome to kaybee_theme's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-I have some stuff in here.
+   blog/index.rst
 
 Indices and tables
 ==================
