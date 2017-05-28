@@ -16,6 +16,8 @@
 
 - Icon for LiveSearch box
 
+- Merge kaybee_theme and kaybee
+
 # Next
 
 - Release a package

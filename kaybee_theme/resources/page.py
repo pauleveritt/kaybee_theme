@@ -28,16 +28,6 @@ class Page:
         return template.render(page=self, site=self.site)
 
 
-@CMS.render.register(resource_type='Page')
-def render_page(cms, page_body, resource=Page):
-    page1 = Page(
-        cms,
-        resource,
-        body=page_body
-    )
-    return page1
-
-
 if __name__ == '__main__':
     cms = CMS('Some Sphinx docs site')
     resource1 = dict(

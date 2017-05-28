@@ -1,4 +1,5 @@
 sample_site = dict(
+    sphinx_config={},
     title='My Kaybee Site',
     nav_menu=[
         dict(title='Home', url=''),

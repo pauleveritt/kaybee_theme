@@ -19,10 +19,8 @@ from livereload import Server
 from markupsafe import Markup
 
 from kaybee_theme.rms import CMS
-from kaybee_theme.page import Page
 from kaybee_theme.sample_data import sample_site
-
-Page  # Prevent Optimize Imports from whacking this
+from kaybee_theme.resources import setup
 
 app = Flask(
     __name__,
@@ -31,7 +29,7 @@ app = Flask(
     template_folder='./templates'
 )
 app.debug = True
-cms = CMS(sample_site['title'])
+cms = CMS(sample_site['title'],config={})
 
 
 @app.route("/")
@@ -57,5 +55,6 @@ def blog():
 
 
 if __name__ == "__main__":
+    setup(sample_site['sphinx_config'])
     server = Server(app.wsgi_app)
     server.serve()

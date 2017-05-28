@@ -1,5 +1,7 @@
 """
-Implement a Page content type that can render itself
+
+Wrapper for the "Site" and the registration system.
+
 """
 import reg
 from jinja2 import Environment, PackageLoader, select_autoescape
@@ -8,17 +10,14 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 class CMS:
     is_sphinx = False
 
-    nav_menu = [
-        dict(title='Home', url=''),
-        dict(title='Blog', url='blog')
-    ]
-
-    def __init__(self, title):
+    def __init__(self, title, config):
+        # The config comes from the Sphinx conf.py file
         self.title = title
         self.env = Environment(
             loader=PackageLoader('kaybee_theme', 'templates'),
             autoescape=select_autoescape(['html', 'xml'])
         )
+        self.config = config
 
     @reg.dispatch_method(
         reg.match_key(
